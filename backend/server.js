@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, '../frontend')));
 
 // MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/whatsapp_sender')
+mongoose.connect(process.env.MONGO_URI || 'mongodb+srv://alonsogarciajuanismael_db_user:H11Ld5EvH1oufo5A@fluxwa.hnvu6nc.mongodb.net/?appName=FluxWA')
   .then(() => console.log('✅ MongoDB conectado'))
   .catch(err => console.error('❌ MongoDB error:', err));
 
@@ -52,7 +52,7 @@ io.on('connection', (socket) => {
   socket.on('disconnect', () => console.log('🔌 Cliente desconectado:', socket.id));
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3002;
 server.listen(PORT, () => console.log(`🚀 Servidor en http://localhost:${PORT}`));
 
 module.exports = { app, io };

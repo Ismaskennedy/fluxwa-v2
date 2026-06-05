@@ -128,7 +128,7 @@ async function handleIncomingMessage(msg, lineId, io) {
  * Manejar confirmaciones de lectura
  */
 async function handleAck(ack) {
-  const statusMap = { 1: 'sent', 2: 'delivered', 3: 'read', 4: 'read', -1: 'failed' };
+  const statusMap = { 1: 'sent', 2: 'delivered', 3: 'read', 4: 'read', 5: 'read' };
   const status = statusMap[ack.ack];
   if (!status) return;
 
